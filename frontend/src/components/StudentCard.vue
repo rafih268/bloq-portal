@@ -1,7 +1,31 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
 defineProps({
   name: String,
   year: [String, Number],
+});
+
+const isDropdownOpen = ref(false);
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const dropdownRef = ref(null);
+
+const handleClickOutside = (event) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+    isDropdownOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
 })
 </script>
 
@@ -15,10 +39,9 @@ defineProps({
         alt="Student Image"
       />
 
-      <div class="relative">
+      <div class="relative" ref="dropdownRef">
         <button
-          id="dropdownButton"
-          data-dropdown-toggle="dropdown"
+          @click="toggleDropdown"
           class="inline-block text-gray-400 hover:bg-gray-700 rounded-lg text-sm p-1.5"
           type="button"
         >
@@ -36,17 +59,23 @@ defineProps({
   
         <!-- Dropdown menu -->
         <div
-          id="dropdown"
-          class="z-10 hidden absolute right-0 mt-2 text-base list-none bg-gray-700 divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+          v-if="isDropdownOpen"
+          class="z-10 absolute right-0 mt-2 text-base list-none bg-gray-700 divide-y divide-gray-100 rounded-lg shadow-sm w-44">
           <ul class="py-2" aria-labelledby="dropdownButton">
             <li>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:text-white hover:bg-gray-600">Edit</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:text-white hover:bg-gray-600">
+                Edit
+              </a>
             </li>
             <li>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white">Archive</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white">
+                Archive
+              </a>
             </li>
             <li>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white">Delete</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 hover:text-white">
+                Delete
+              </a>
             </li>
           </ul>
         </div>
