@@ -3,10 +3,9 @@
 
 <template>
   <nav class="border-amber-200 bg-amber-300">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
       <a href="https://techbloq.co.uk/" class="flex items-center space-x-3">
-        <img src="../assets//img/tbq-siteident-150x150.png" class="h-10" alt="Techbloq Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap">Bloq Portal</span>
+        <img src="../assets/img/techbloq-logo-site-1.png" class="h-16" alt="Techbloq Logo" />
       </a>
       <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-solid-bg" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
