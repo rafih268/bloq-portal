@@ -30,7 +30,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/about" class="block py-2.5 px-4 text-black rounded-sm hover:bg-black border-0 hover:text-white transition duration-200 ease-in-out">
+            <router-link to="/about" class="block py-2.5 px-4 text-black rounded-sm hover:bg-black border-0 hover:text-white transition duration-75 ease-in-out">
               About
             </router-link>
           </li>

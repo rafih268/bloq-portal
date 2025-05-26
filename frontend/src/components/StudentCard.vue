@@ -93,7 +93,7 @@ onBeforeUnmount(() => {
           <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-full text-sm px-4 py-1.5">
             View Profile
           </button>
-          <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-full text-sm px-4 py-1.5">
+          <button type="button" class="text-black hover:text-white border border-gray-900  hover:bg-gray-700 font-medium rounded-lg text-sm px-4 py-1.5 text-center transition duration-200 ease-in-out">
             Send Message
           </button>
         </div>
